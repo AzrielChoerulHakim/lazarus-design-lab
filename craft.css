@@ -298,3 +298,5 @@ button:not(:disabled){touch-action:manipulation}
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+.no-script{margin:0;padding:24px;font:500 15px/1.6 var(--sans);color:#374f43}
