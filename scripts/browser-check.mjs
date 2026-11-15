@@ -51,6 +51,16 @@ try{
         return {artboardWidth:Math.round(area.width),overflowCandidates:suspect};
       });
       geometry.push({width,concept:i,...layout});
+      if(width<=390){
+        const essential=['.record-copy','.method-hero p','.sequence-reader p','.index-header p','.letter-body>p:not(.letter-salutation)','.desk-document p','.portrait-content p'][i-1];
+        const fontSize=await page.locator('#mount '+essential).first().evaluate(el=>Number.parseFloat(getComputedStyle(el).fontSize));
+        if(fontSize<14)errors.push(width+' concept '+i+' essential reading text under 14px: '+fontSize);
+        const smallTargets=await page.locator('#mount button').evaluateAll(buttons=>buttons.filter(b=>{
+          const r=b.getBoundingClientRect();
+          return r.width<44 || r.height<44;
+        }).map(b=>(b.textContent||'').trim().slice(0,45)));
+        if(smallTargets.length)errors.push(width+' concept '+i+' internal buttons smaller than 44 CSS px: '+smallTargets.join(', '));
+      }
       await page.screenshot({path:path.join(shots,width+'-concept-'+i+'.png'),fullPage:true});
     }
     // Verify internal controls in addition to concept switching
