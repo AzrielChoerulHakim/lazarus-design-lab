@@ -12,6 +12,7 @@ jobs:
         with:
           node-version: '22'
       - run: node --check app.js
+      - run: node --check scripts/verify.mjs
       - run: node scripts/verify.mjs
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
