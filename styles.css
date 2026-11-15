@@ -43,3 +43,52 @@
 @media(max-width:780px){.lab-topmiddle{display:none}.lab-intro{padding-top:35px;padding-bottom:46px}.intro-main{display:block}.intro-aside{max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;margin-top:25px}.intro-aside p{margin-bottom:8px}.intro-main h1{font-size:clamp(52px,9vw,76px)}.lab-browser{padding:24px 12px 45px}.concept-nav{display:flex;overflow-x:auto;scrollbar-width:thin}.concept-nav button{flex:0 0 128px;min-height:73px}.screen-label span:last-child{display:none}.control-title h2{font-size:22px}.preview-frame{overflow-x:auto}.concept{min-height:590px}.c1{padding:20px 3% 0}.record-col{padding-top:28px}.record-col h2{font-size:clamp(48px,8vw,74px)}.record-photo{min-height:300px}.record-copy{font-size:12px}.record-sub{font-size:9px}.record-sign{margin-top:8px}.c2 .method-hero h2{font-size:clamp(65px,12vw,90px)}.method-hero{grid-template-columns:66% 34%}.method-hero p{font-size:12px}.method-list button{padding:15px 8px}.method-list button strong{font-size:24px}.sequence-main{grid-template-columns:58% 42%;gap:15px}.sequence-hero h2{font-size:clamp(58px,9vw,90px)}.sequence-reader{padding-left:20px}.sequence-reader strong{font-size:31px}.sequence-timeline button{padding:12px 7px}.sequence-timeline strong{font-size:24px}.index-header h2{font-size:clamp(100px,16vw,137px)}.index-header p{font-size:12px}.letter-grid{grid-template-columns:12% 62% 26%}.letter-margin{padding-right:7px}.letter-margin p{font-size:10px}.letter-body{padding:28px 4%}.letter-body h2{font-size:clamp(51px,8vw,70px)}.letter-body>p:not(.letter-salutation){font-size:12px}.letter-side{padding-left:7px}.desk-grid{grid-template-columns:30% 70%}.desk-properties{display:none}.desk-folder button{font-size:9px}.portrait-content h2{font-size:clamp(76px,12vw,118px)}.portrait-content h2 em{font-size:1.05em}.portrait-bottom{grid-template-columns:repeat(3,1fr)}.portrait-bottom a{grid-column:1/-1;width:max-content}.facts-section{grid-template-columns:1fr;gap:26px;padding:75px 23px}.facts-number{font-size:110px}.lab-footer{align-items:start}}
 @media(max-width:510px){.lab-top{min-height:70px}.lab-symbol{width:42px;height:42px;font-size:21px}.intro-meta{font-size:8px}.intro-main h1{font-size:clamp(38px,10vw,54px)}.intro-description{font-size:14px}.intro-aside p{font-size:13px}.control-buttons{gap:5px}.control-buttons span{display:none}.control-buttons button{width:34px;height:34px}.control-title h2{font-size:19px}.screen-label{font-size:8px;padding:10px}.screen-label span:nth-child(2){display:none}.concept{min-height:660px}.record-top>div:nth-child(2){display:none}.record-top{grid-template-columns:1fr 1fr;font-size:8px}.record-main{grid-template-columns:55% 45%}.record-col h2{font-size:clamp(28px,8vw,39px);margin:30px 0 20px}.record-col{padding:30px 8% 15px 0}.record-photo{min-height:340px;background-position:45% 26%}.record-copy{font-size:11px;line-height:1.45}.record-sub{font-size:9px}.record-sign{font-size:8px}.record-sign em{font-size:20px}.record-tabs button{font-size:8px;padding:12px 5px}.record-result{font-size:9px;grid-template-columns:31% 1fr}.record-result strong{font-size:10px}.method-head span:nth-child(2){display:none}.method-hero{grid-template-columns:1fr;min-height:310px;padding-top:29px}.method-hero h2,.c2 .method-hero h2{font-size:72px;margin:22px 0}.method-motif{display:none}.method-process{grid-template-columns:1fr}.method-list{border-right:0}.method-list button strong{font-size:23px}.method-info{padding:18px 0}.sequence-head>span:nth-child(2){display:none}.sequence-main{grid-template-columns:1fr;padding:27px 0 22px;gap:12px}.sequence-hero h2{font-size:65px;margin:17px 0}.sequence-hero p{font-size:12px}.sequence-reader{border-left:0;border-top:1px solid #64878a;padding:16px 0 0}.sequence-reader strong{font-size:28px;margin-top:12px}.sequence-reader p{font-size:12px;margin-top:10px}.sequence-tracks{height:25px}.sequence-timeline strong{font-size:19px}.sequence-timeline small{display:none}.sequence-timeline button{flex-direction:column;align-items:start;gap:5px}.index-head>span:nth-child(2){display:none}.index-header{grid-template-columns:1fr;gap:0}.index-header h2{font-size:clamp(83px,23vw,120px);margin:10px 0}.index-header p{margin-bottom:4px;max-width:370px}.index-entry strong{font-size:16px}.index-entry span{font-size:8px}.index-labels{font-size:8px}.index-foot{font-size:8px}.letter-head{font-size:8px}.letter-head span:nth-child(2){display:none}.letter-grid{grid-template-columns:70% 30%}.letter-margin{display:none}.letter-body{padding:26px 5% 0 0}.letter-body h2{font-size:clamp(34px,9.4vw,48px)}.letter-body>p:not(.letter-salutation){font-size:11px;line-height:1.52}.letter-side{padding:18px 0 0 6px}.letter-photo{min-height:200px;height:50%}.letter-side>p{font-size:11px}.letter-under{font-size:8px}.letter-body a{font-size:9px}.desk-head>span:nth-child(2){display:none}.desk-head{font-size:8px}.desk-grid{grid-template-columns:33% 67%}.desk-folder{padding:20px 4%}.desk-folder button{padding:13px 4px;font-size:8px}.desk-document{padding:15px 5%}.desk-document h2{font-size:clamp(28px,7vw,36px);overflow-wrap:break-word}.desk-document p{font-size:12px}.desk-icon{font-size:62px}.desk-paper-head{font-size:8px}.desk-folder-title{font-size:9px}.portrait-photo{left:18%;filter:brightness(.57)}.portrait-overlay{background:linear-gradient(90deg,#111818 0%,#121a1ac4 42%,#161b1b33 100%),linear-gradient(0deg,#131918 0%,transparent 75%)}.portrait-head{font-size:8px}.portrait-head span:nth-child(2){display:none}.portrait-content h2{font-size:clamp(47px,14vw,64px)}.portrait-content{padding-top:30px}.portrait-content p{font-size:12px;max-width:340px}.portrait-bottom{grid-template-columns:repeat(3,1fr);gap:7px}.portrait-bottom strong{font-size:10px}.portrait-bottom span{font-size:8px}.portrait-bottom a{font-size:9px}.analysis-grid{grid-template-columns:1fr}.facts-copy h2{font-size:clamp(38px,10vw,48px);overflow-wrap:break-word}.lab-footer{display:block}.lab-footer>*{display:block;margin:10px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* VISUAL QA 2026-11-15 — viewport-tested typography and portrait continuity.
+   The original narrow-screen layouts squeezed desktop columns into ~320px.
+   Keep reading content at usable widths and use photographs as the subject. */
+.index-header h2{line-height:.87;letter-spacing:-.075em}
+@media(max-width:510px){
+  /* The Record — read the identity first, then see a real portrait at full width. */
+  .c1 .record-main{grid-template-columns:minmax(0,1fr)}
+  .c1 .record-col{padding:26px 0 12px}
+  .c1 .record-col h2{font-size:clamp(43px,12vw,55px);margin:18px 0 16px;line-height:.95}
+  .c1 .record-copy{font-size:14px;line-height:1.58;max-width:35ch}
+  .c1 .record-sub{font-size:10px}
+  .c1 .record-rule{margin-top:20px;margin-bottom:12px}
+  .c1 .record-media{padding:12px 0 18px;min-height:375px}
+  .c1 .record-photo{min-height:350px;background-position:75% 36%}
+  .c1 .record-fig{font-size:9px}
+  .c1 .record-tabs button{font-size:10px;min-height:46px;padding:9px 6px}
+  .c1 .record-result{grid-template-columns:1fr;gap:7px;padding:15px 6px}
+  .c1 .record-result strong{font-size:12px;line-height:1.4}
+  /* The Letter — no 70/30 newspaper column for a 320px screen. */
+  .c5 .letter-grid{grid-template-columns:minmax(0,1fr)}
+  .c5 .letter-body{padding:24px 0 15px}
+  .c5 .letter-body h2{font-size:clamp(40px,11vw,53px);line-height:1.02}
+  .c5 .letter-body>p:not(.letter-salutation){font-size:14px;line-height:1.65}
+  .c5 .letter-body a{font-size:12px;min-height:44px}
+  .c5 .letter-side{border-left:0;border-top:1px solid #b0a693;padding:15px 0 5px;display:grid;grid-template-columns:minmax(125px,42%) 1fr;gap:7px 16px;min-height:235px}
+  .c5 .letter-photo{grid-row:span 2;width:100%;height:220px;min-height:220px;background-position:74% 31%}
+  .c5 .letter-side>span{margin:0;font-size:10px;align-self:end}
+  .c5 .letter-side>p{font-size:13px;line-height:1.5;margin:0;align-self:start}
+  /* Operations Desk — dossier buttons above the document, not a narrow sidebar. */
+  .c6 .desk-grid{grid-template-columns:minmax(0,1fr)}
+  .c6 .desk-folder{border-right:0;border-bottom:1px solid #51768a;padding:14px 4%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+  .c6 .desk-folder-title{grid-column:1/-1;padding-bottom:10px;font-size:11px}
+  .c6 .desk-hierarchy,.c6 .desk-bottom{display:none}
+  .c6 .desk-folder button{display:block;padding:11px 9px;font-size:11px;line-height:1.35;min-height:47px;overflow-wrap:anywhere}
+  .c6 .desk-paper{min-height:365px}
+  .c6 .desk-paper-head{padding:15px 4%;font-size:10px}
+  .c6 .desk-icon{font-size:45px;padding:13px 0 0}
+  .c6 .desk-document{padding:10px 5% 20px}
+  .c6 .desk-document h2{font-size:clamp(37px,10vw,47px);line-height:1.05;margin:16px 0}
+  .c6 .desk-document p{font-size:14px;line-height:1.58}
+  .c6 .desk-paper-foot{font-size:10px}
+  /* The Portrait — the person must remain visible while the text stays legible. */
+  .c7 .portrait-photo{filter:brightness(.9) saturate(.87);background-position:59% center}
+  .c7 .portrait-overlay{background:linear-gradient(90deg,#101818ee 0%,#101818bd 38%,#10181852 72%,#10181816 100%),linear-gradient(0deg,#101818ed 0%,transparent 55%)}
+  .c7 .portrait-content p{font-size:14px;line-height:1.6}
+  .c7 .portrait-bottom strong{font-size:11px}
+}
