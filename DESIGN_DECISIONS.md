@@ -27,11 +27,11 @@ Individual legal case outcomes, independent legal counsel experience, external c
 | # | Direction | Information architecture | Visual/copy grammar | Primary interaction | Benefit | Trade-off |
 |---|---|---|---|---|---|---|
 | 01 | The Record | Identity → educational record → legal work → operations | Archival dossier, numbered documents, portrait as evidence | Switch between verified record tabs | High credibility for administrative roles | Formal/institutional |
-| 02 | Work / Method | Responsibility verbs → corresponding employer evidence | Process-oriented diagrams, actionable verbs, green/copper | Select verify/organize/record/serve | Reveals cross-role skills | Date hierarchy requires care |
+| 02 | Work / Method | Responsibility verbs → corresponding employer evidence | CV-sourced workplace contexts and actionable task verbs | Select verify/organize/record/serve | Reveals cross-role skills | Date hierarchy requires care |
 | 03 | The Sequence | Chronological workplaces → role detail | Deep teal timelines, year/month as navigation | Select dated milestone | Shows development without fake projects | Long timelines can bury key claims |
-| 04 | Open Index | Flat work/education register → expandable facts | High-contrast civic typography, no hero portrait | Accessible accordion rows | Rapid scanning, honest evidence | Expressive visual voice may be too bold |
+| 04 | Open Index | Flat work/education register → expandable facts | Restrained, readable register typography, no hero portrait | Accessible accordion rows | Rapid scanning, honest evidence | Expressive visual voice may be too bold |
 | 05 | The Letter | Salutation → narrative introduction → evidence notes → contact | Book/letter typography, marginal portrait | Deliberately linear reading + mailto | Calm and approachable | Needs editorial care to avoid generic cover-letter prose |
-| 06 | Operations Desk | Folder hierarchy → document preview → source properties | Technical file browser, no invented KPIs | Choose factual source record | Fits document management story | More UI complexity than necessary |
+| 06 | Operations Desk | Section index → factual record preview → source properties | CV-sourced record browser, no simulated files or invented KPIs | Choose factual source record | Fits document management story | More UI complexity than necessary |
 | 07 | The Portrait | Human image → three verified anchors → contact | Image-led visual storytelling and bold type | Minimal; direct contact | Strong personal recognition | Insufficient work depth alone |
 
 ### Why these aren't just seven Atlas clones

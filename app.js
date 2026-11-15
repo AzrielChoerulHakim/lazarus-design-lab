@@ -91,15 +91,16 @@
 
   function setupDesk() {
     const values = [
-      ['01_COURT_INTERNSHIP.txt', 'Legal administration,\nin practice.', 'Supported lawsuit receipt, document-completeness checks, case-file processing and archiving during an internship at the South Jakarta Religious Court in February 2024.', 'COURT INTERNSHIP', 'FEB 2024'],
-      ['02_EDUCATION.txt', 'A legal\nfoundation.', 'Bachelor of Law, UIN Syarif Hidayatullah Jakarta (2021–2026). Recorded GPA: 3.79/4.00.', 'BACHELOR OF LAW', '2021–2026'],
-      ['03_OPERATIONS.txt', 'Responsibility\nin motion.', 'Worked in retail operations and service at ITC Depok, Breeze Ice Cream FH UI, and Ramayana Ciplaz Depok. Duties included transactions, stock and daily reporting.', 'OPERATIONS & SERVICE', '2024–2025'],
-      ['04_CREDENTIALS.txt', 'Learning\nbeyond campus.', 'HR Intensive Bootcamp (Harisenin.com, June 2026); Data Formatting & Cleansing class (MySkill, Nov 2024); Criminal Court Simulation Training (UIN Jakarta, Aug–Sep 2024).', 'TRAINING & CLASSES', '2024–2026']
+      ['COURT INTERNSHIP / FEB 2024', 'Legal administration,\nin practice.', 'Supported lawsuit receipt, document-completeness checks, case-file processing and archiving during an internship at the South Jakarta Religious Court in February 2024.', 'COURT INTERNSHIP', 'FEB 2024'],
+      ['EDUCATION / 2021–2026', 'A legal\nfoundation.', 'Bachelor of Law, UIN Syarif Hidayatullah Jakarta (2021–2026). Recorded GPA: 3.79/4.00.', 'BACHELOR OF LAW', '2021–2026'],
+      ['OPERATIONS / 2024–2025', 'Responsibility\nin motion.', 'Worked in retail operations and service at ITC Depok, Breeze Ice Cream FH UI, and Ramayana Ciplaz Depok. Duties included transactions, stock and daily reporting.', 'OPERATIONS & SERVICE', '2024–2025'],
+      ['TRAINING / 2024–2026', 'Learning\nbeyond campus.', 'HR Intensive Bootcamp (Harisenin.com, June 2026); Data Formatting & Cleansing class (MySkill, Nov 2024); Criminal Court Simulation Training (UIN Jakarta, Aug–Sep 2024).', 'TRAINING & CLASSES', '2024–2026']
     ];
     mount.querySelectorAll('[data-desk]').forEach(button => button.addEventListener('click', () => {
       const i = Number(button.dataset.desk);
       activateChoice('[data-desk]', button);
       ['desk-filename', 'desk-title', 'desk-copy', 'desk-record', 'desk-date'].forEach((id,k) => text(id, values[i][k]));
+      text('desk-icon', String(i + 1).padStart(2, '0'));
     }));
   }
 
