@@ -87,7 +87,7 @@
   .c6 .desk-document p{font-size:14px;line-height:1.58}
   .c6 .desk-paper-foot{font-size:10px}
   /* The Portrait — the person must remain visible while the text stays legible. */
-  .c7 .portrait-photo{filter:brightness(.9) saturate(.87);background-position:59% center}
+  .c7 .portrait-photo{filter:brightness(.9) saturate(.87);background-size:cover;background-repeat:no-repeat;background-position:52% center}
   .c7 .portrait-overlay{background:linear-gradient(90deg,#101818ee 0%,#101818bd 38%,#10181852 72%,#10181816 100%),linear-gradient(0deg,#101818ed 0%,transparent 55%)}
   .c7 .portrait-content p{font-size:14px;line-height:1.6}
   .c7 .portrait-bottom strong{font-size:11px}
