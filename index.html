@@ -26,7 +26,7 @@
 </section>
 <section class="lab-browser" id="preview" aria-label="Seven concept previews">
  <div class="control-row">
-  <div class="control-title"><span class="tiny-label">DESIGN DIRECTIONS</span><h2 id="active-heading">01 / The Record</h2></div>
+  <div class="control-title"><span class="tiny-label">DESIGN DIRECTIONS</span><h2 id="active-heading" aria-live="polite" aria-atomic="true">01 / The Record</h2></div>
   <div class="control-buttons"><span id="active-total" aria-live="polite">01 — 07</span><button type="button" id="prev" aria-label="Previous concept">←</button><button type="button" id="next" aria-label="Next concept">→</button></div>
  </div>
  <div class="concept-nav" role="group" aria-label="Select one of seven concepts">
@@ -39,7 +39,7 @@
   <button data-concept="7" aria-pressed="false"><span>07</span><strong>The Portrait</strong></button>
  </div>
  <div class="screen-label"><span>INTERACTIVE DESIGN STUDY</span><span>SOURCE / SUPPLIED CV</span><span>SEVEN DISTINCT STRUCTURES</span></div>
- <div class="preview-frame" id="preview-frame"><div id="mount" aria-live="polite" aria-atomic="true"></div></div>
+ <div class="preview-frame" id="preview-frame"><div id="mount"></div></div>
  <div class="analysis-grid">
   <div><span>THESIS</span><h3 id="thesis"></h3></div>
   <div><span>PAGE STRUCTURE</span><p id="structure"></p></div>
@@ -60,7 +60,7 @@
   <div class="record-col"><div class="record-tab-no">01 / IDENTITY</div><h2>Hanindhiya<br>Daffa <i>Aurelya.</i></h2><p class="record-sub">LAW GRADUATE · LEGAL & OFFICE ADMINISTRATION</p><div class="record-rule"></div><p class="record-copy">An early-career professional bringing legal-administration training together with customer-facing and operational experience.</p><div class="record-sign">PRECISION<br><em>IN PRACTICE.</em></div></div>
   <div class="record-media"><div class="record-photo portrait" role="img" aria-label="Portrait photograph supplied for portfolio experiment"></div><div class="record-fig"><span>FIG. 01 / PERSONAL PORTRAIT</span><span>AUTHENTIC MATERIAL</span></div></div>
  </div>
- <div class="record-tabs" role="group" aria-label="Record chapters"><button data-rec="0" class="active">01 / EDUCATION</button><button data-rec="1">02 / LEGAL PRACTICE</button><button data-rec="2">03 / OPERATIONS</button></div>
+ <div class="record-tabs" role="group" aria-label="Record chapters"><button data-rec="0" class="active">01 / EDUCATION</button><button data-rec="1">02 / COURT INTERNSHIP</button><button data-rec="2">03 / OPERATIONS</button></div>
  <div class="record-result"><span id="record-k">01 — VERIFIED EDUCATION</span><strong id="record-v">UIN Syarif Hidayatullah Jakarta · Bachelor of Law · GPA 3.79/4.00</strong></div>
 </article></template>
 <template id="concept-2"><article class="concept c2" aria-label="Work Method portfolio concept">
@@ -86,13 +86,14 @@
  </article></template>
 <template id="concept-4"><article class="concept c4" aria-label="Open Index portfolio concept">
  <div class="index-head"><span>HDA<span class="index-star">✳</span></span><span>AN OPEN REGISTER OF WORK & LEARNING</span><span>DEPOK / 2026</span></div>
- <div class="index-header"><h2>Four<br><span>records.</span></h2><p>Three professional roles and one academic credential. Every row opens its supporting details.</p></div>
+ <div class="index-header"><h2>Five<br><span>records.</span></h2><p>Four professional roles and one academic credential. Each entry is drawn from the CV.</p></div>
  <div class="index-labels"><span>RECORD / SUBJECT</span><span>CONTEXT</span><span>DATE</span></div>
  <div class="index-rows">
- <button class="index-entry" data-index="0" aria-expanded="false"><strong>LEGAL ADMINISTRATION INTERN</strong><span>RELIGIOUS COURT</span><span>2024</span></button><div class="index-expansion" hidden>Supported receipt of lawsuits, case-file preparation, archiving, and compliance with administrative procedures.</div>
- <button class="index-entry" data-index="1" aria-expanded="false"><strong>CASHIER</strong><span>RAMAYANA</span><span>2025</span></button><div class="index-expansion" hidden>Processed payments with point-of-sale machines, recorded daily sales, and provided customer service.</div>
- <button class="index-entry" data-index="2" aria-expanded="false"><strong>OUTLET CREW</strong><span>BREEZE ICE CREAM</span><span>2024</span></button><div class="index-expansion" hidden>Supported service, sales transactions, outlet operations, and daily inventory and sales reporting.</div>
- <button class="index-entry" data-index="3" aria-expanded="false"><strong>BACHELOR OF LAW</strong><span>UIN JAKARTA</span><span>2026</span></button><div class="index-expansion" hidden>Bachelor of Law, UIN Syarif Hidayatullah Jakarta (2021–2026). GPA: 3.79/4.00.</div>
+ <button class="index-entry" data-index="0" aria-expanded="false" aria-controls="index-detail-0"><strong>LEGAL ADMINISTRATION INTERN</strong><span>RELIGIOUS COURT</span><span>2024</span></button><div id="index-detail-0" class="index-expansion" hidden>Supported receipt of lawsuits, case-file preparation, archiving, and compliance with administrative procedures.</div>
+ <button class="index-entry" data-index="1" aria-expanded="false" aria-controls="index-detail-1"><strong>CASHIER</strong><span>RAMAYANA</span><span>2025</span></button><div id="index-detail-1" class="index-expansion" hidden>Processed payments with point-of-sale machines, recorded daily sales, and provided customer service.</div>
+ <button class="index-entry" data-index="2" aria-expanded="false" aria-controls="index-detail-2"><strong>OUTLET CREW</strong><span>BREEZE ICE CREAM</span><span>2024</span></button><div id="index-detail-2" class="index-expansion" hidden>Supported service, sales transactions, outlet operations, and daily inventory and sales reporting.</div>
+ <button class="index-entry" data-index="3" aria-expanded="false" aria-controls="index-detail-3"><strong>OUTLET CREW</strong><span>ITC DEPOK</span><span>2024</span></button><div id="index-detail-3" class="index-expansion" hidden>Supported clothing-store operations, customer service, transactions, and daily inventory and sales reporting during August–September 2024.</div>
+ <button class="index-entry" data-index="4" aria-expanded="false" aria-controls="index-detail-4"><strong>BACHELOR OF LAW</strong><span>UIN JAKARTA</span><span>2026</span></button><div id="index-detail-4" class="index-expansion" hidden>Bachelor of Law, UIN Syarif Hidayatullah Jakarta (2021–2026). GPA: 3.79/4.00.</div>
  </div><div class="index-foot"><span>SELECT A RECORD TO SEE DETAILS</span><span>OPEN / NO INVENTED WORK</span><span class="index-arrow">↗</span></div>
  </article></template>
 <template id="concept-5"><article class="concept c5" aria-label="The Letter editorial portfolio concept">
