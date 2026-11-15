@@ -1,58 +1,58 @@
 # Quality Assurance — Field Experiment 001
 
-## Status
-**Static/source-level review performed; browser screenshot/e2e checks are configured in CI but their run status has not been independently confirmed in this authoring session.** Do not interpret this document as a claim that visual QA passed. A GitHub Actions job is included to capture 35 screenshots (320px, 390px, 768px, 1024px and 1440px × 7 concepts) and verify representative interactions; its artifacts must be inspected by a human reviewer.
+**Status as of 2026-11-15:** browser-tested prototype; **not a production-ready client portfolio**. Evidence is from an actual GitHub-hosted Chromium/Playwright run, artifact screenshots and a visual review of desktop and mobile captures.
 
-## Verified during creation
-- Retrieved source document was the one-page PDF titled “CV HANINDHIYA DAFFA AURELYA.pdf”.
-- Reviewed four photos in the uploaded `Aurel.zip` contact sheet.
-- GitHub connector confirmed repository permissions and **Public** visibility.
-- GitHub connector confirmed seven template nodes and corresponding seven concept-selector controls.
-- Checked `app.js` JavaScript parsing in a JS environment and the local file syntax; no syntax error was reported.
-- Decoded both embedded WebP images from GitHub and confirmed valid RIFF/WEBP headers plus exact byte lengths.
-- Confirmed main HTML omits raw phone number and raw CV download.
-- Confirmed reduced-motion media query and multiple responsive CSS breakpoints are present.
-- A GitHub Actions workflow exists for static verification and Playwright interaction/visual screenshots.
+## Reproducible verification
 
-## Browser/device test matrix
-| Test | Status | Evidence |
+- [Successful browser workflow — run 43705123528](https://github.com/AzrielChoerulHakim/lazarus-design-lab/actions/runs/43705123528) on the completed QA branch, subsequently merged via [PR #1](https://github.com/AzrielChoerulHakim/lazarus-design-lab/pull/1).
+- [Download original 35 browser screenshots and geometry report](https://github.com/AzrielChoerulHakim/lazarus-design-lab/actions/runs/43705123528/artifacts/14158257427) (GitHub Actions artifact; access may require GitHub sign-in).
+- Viewport widths tested: 320, 390, 768, 1024, 1440 CSS px; one screenshot per concept per width, **35 screenshots total**.
+- All concept selection and representative internal state checks passed, including `aria-pressed` for Record, Method, Sequence and Operations Desk.
+- Both embedded SVG/WebP photograph resources were fetched and returned HTTP 200 from the local test server.
+- No JavaScript page exceptions were reported by the automated browser check, and no whole-document horizontal overflow occurred. Geometry scan found **0 of 35** artboard/viewport combinations with the sampled h2/h3/p/strong/button boxes extending past artboard bounds.
+- **Important:** passing geometry does **not** establish readable small type, correct image crops, contrast, keyboard-only UX, zoom behavior, production performance or aesthetic quality.
+
+## Direct visual inspection of browser screenshots
+
+### Problems identified and corrected
+| Concept | Observed at 320–390px | Change made |
 |---|---|---|
-| Seven concept templates exist | PASS — source inspection | `index.html` |
-| Concept selection implementation | PASS — source inspection only | `app.js`; NOT YET E2E-VERIFIED |
-| JS parsing | PASS — syntax inspection | `app.js` |
-| Embedded original-image derivatives | PASS — binary structure; browser rendering unverified | `assets/*.svg` |
-| 320px, 390px, 768px, 1024px and 1440px rendering | NOT YET VERIFIED | CI Playwright screenshots pending; manual review required |
-| Touch and keyboard navigation | NOT YET VERIFIED | CI covers button clicks; full keyboard audit pending |
-| Zoom to 200% | NOT YET VERIFIED | Manual review required |
-| Reduced motion | PARTIAL — stylesheet present; behavior not yet inspected | `styles.css` |
-| Independent blind perception | NOT YET TESTED | Arrange evaluators |
-| Photographic rights / consent | NOT YET CONFIRMED | Subject approval required |
-| Live GitHub Pages availability | NOT YET CONFIRMED | Visit Pages settings / Actions |
+| 01 The Record | Two narrow columns cropped the subject's face and compressed the copy | Stacked identity and full-width portrait, increased readable text sizes, better tabs |
+| 05 The Letter | 70/30 letter-photo columns caused tiny text and partial-face crop | Full-width letter text; photo and captions moved below into a separate responsive group |
+| 06 Operations Desk | 33/67 file-panel layout squeezed filenames and the case preview | Document files became a two-column selection grid above full-width details |
+| 04 Open Index | Very compressed uppercase headline reduced clarity | Adjusted headline line height and tracking |
+| 07 The Portrait | Landscape photo was dark and inadequately framed on mobile | Improved brightness and removed repeated background; repositioned image for a usable crop |
 
-## CI workflow
-On push to `main`, `.github/workflows/verify.yml` runs:
-1. Node JS syntax + seven-template/source/photo/privacy structural check
-2. Playwright Chromium checks across five responsive widths
-3. Upload `design-lab-visual-review` screenshot artifact
+### Remaining visible limitations
+1. **Concept 07 still needs better art direction.** The 240×160px embedded landscape graduation photo remains a weak source for a large vertical hero, and the subject appears faint behind the title at 390px. A properly approved **portrait-orientation** photo, purposeful responsive crop and contrast check are required.
+2. **Photo sharpness is low.** The public repo intentionally uses compressed SVG-embedded WebP derivatives of about 240×320 and 240×160 px. They are adequate for rough prototypes but visibly soft when expanded. Do not silently publish higher-resolution subject photos without verifying consent and usage rights.
+3. **Seven ideas are not seven complete websites.** The lab shows seven original interactive artboards within one shared explorer shell. Deep case-study pages, richer content pathways, and fully integrated employer-specific journeys have not been built.
+4. **AI-generic visual tendency remains partly visible.** Multiple artboards still use a large display headline, tiny uppercase labels and similar editorial metadata. This is the exact kind of house-style convergence the Design OS intends to prevent; future experiments should diverge at the composition and storytelling level, not only color.
+5. **No independent blind perception review** has been done. Distinctiveness cannot be declared proven.
+6. **No full keyboard-only, screen reader, 200%-zoom, contrast-ratio or real mobile-device review** has been completed. Browser tests use desktop Chromium viewports; a passed emulated viewport is not equal to touch and accessibility validation.
+7. **Live GitHub Pages publication was not confirmed in the browser used for the authoring audit.** The CI run rendered repository files on a local HTTP server. Check [Pages](https://github.com/AzrielChoerulHakim/lazarus-design-lab/settings/pages) and [Actions](https://github.com/AzrielChoerulHakim/lazarus-design-lab/actions) separately for live deployment status.
+8. **Fonts use Google Fonts**, with local fallbacks defined in CSS. Check layout again with external font loading blocked.
 
-A second workflow (`.github/workflows/pages.yml`) attempts to deploy the static HTML/CSS/JS through GitHub Pages. GitHub repository settings and Actions permissions must allow Pages deployment. The expected URL is:
-https://azrielchoerulhakim.github.io/lazarus-design-lab/
+## Source integrity and privacy
 
-If Pages deployment fails, in GitHub go to **Settings → Pages → Build and deployment → Source: GitHub Actions**, then rerun the Pages workflow. You can also choose deploy from the `main` branch and `/ (root)` without the workflow, but don't use competing deployment modes simultaneously.
+The baseline is the user-supplied one-page PDF `CV HANINDHIYA DAFFA AURELYA.pdf` and four supplied photographs. The visible site represents the court *internship* as support/administration; it does not fabricate legal case wins, independent legal practice, measured accomplishments, endorsements or client projects.
 
-## Open issues / next iteration
-- The two photo derivatives are intentionally highly compressed for a small public preview. For a production portfolio, replace with quality-controlled, licensed exports after confirmation.
-- All seven artboards are experimental, not fully separate production websites. Their structure varies, but advanced reading/navigation states and deeper project pages are not yet built.
-- All factual outcomes remain limited to the CV; client projects and legal case results are absent.
-- Font loading depends on an external Google Fonts connection; system fallbacks are configured.
-- The correct final voice and primary hiring audience must be confirmed with Aurelya. Avoid implying invented quotations or preferences.
-- A reviewer should check whether the open index and dossier have text clipping at narrow widths. Typography was adjusted defensively, but without a successful browser render a pass claim would be misleading.
+The repo is **PUBLIC** and visibly publishes a full name, professional email and portrait/graduation image derivatives. The raw CV, personal telephone number and full photographic archive are **not** published. Confirm that the subject approves the public display of her portrait and professional information before treating this as her official portfolio.
 
-## Four anti-generic tests
-**Identity swap:** The actual CV facts persist in all seven interpretations; may still need stronger firsthand material.
+## Running the checks
+```sh
+npm install
+npm run verify
+npx playwright install chromium
+npm run test:e2e
+```
 
-**Skeleton:** Each uses a materially different navigation/content order, not a forced seven-way cloning of seven Atlas sources.
+`npm run test:e2e` generates `screenshots/*.png` and `screenshots/geometry-report.json`. Geometry scanning reports potential layout issues but intentionally does not treat all creative overflows as failures; review every screenshot manually. GitHub Actions uploads the screenshots and JSON as an artifact.
 
-**Rationale:** Every concept is anchored to legal administration, precision, operations, education or authentic portraiture, with a documented drawback.
+## What is safe to say
+**Validated:** source syntax, seven selectable concepts, representative tab/record interactions, image resource responses, no whole-page horizontal overflow in the tested Chromium viewports, no sampled off-artboard boxes, and screenshot capture.
 
-**Blind perception:** not tested; do not claim a measured “anti-AI” success rate.
+**Not yet validated:** official consent and licensing, externally hosted website availability, subjective originality, full accessibility, real-device usability, high-resolution photography, production readiness.
+
+## Recommended next iteration
+Obtain subject approval and a more suitable portrait, then choose one of the best-fit work-centric directions (**01 The Record or 02 Work / Method**) for a true professional portfolio. Develop full information architecture, meaningful secondary pages and employer-relevant material rather than polishing all seven demos indefinitely. Keep the remaining artboards as research hypotheses.
