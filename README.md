@@ -27,6 +27,10 @@ The experiment uses the supplied resume **“CV HANINDHIYA DAFFA AURELYA.pdf”*
 ## Source-of-truth limits
 No standalone writing samples, legal case outcomes, independent client engagements, references, or employer endorsements were provided. Do not infer that the legal internship was independent legal practice. Roles and skills are represented using the CV language and dates, while conceptual headlines are editorial interpretation, not quotations from Aurelya.
 
+## Apple-level craft audit
+
+Read [APPLE_CRAFT_AUDIT.md](APPLE_CRAFT_AUDIT.md) for the source-grounded visual critique, design changes, real-browser checks, and the known production blockers. Apple design is used as a **principle-based quality standard**, never as a copied style preset.
+
 ## Evaluation
 See [DESIGN_DECISIONS.md](DESIGN_DECISIONS.md) for all seven concepts and their tradeoffs and [QA.md](QA.md) for verification. No claim of science-backed originality score. Visual quality must be inspected on real devices and tested with the subject.
 
