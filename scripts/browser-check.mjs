@@ -23,7 +23,7 @@ const port=server.address().port;
 const errors=[];
 const browser=await chromium.launch({headless:true});
 try{
-  for(const width of [390,1440]){
+  for(const width of [320,390,768,1024,1440]){
     const page=await browser.newPage({viewport:{width,height:900},deviceScaleFactor:1});
     page.on('pageerror',e=>errors.push(width+' JS runtime error: '+e.message));
     await page.goto('http://127.0.0.1:'+port+'/',{waitUntil:'load'});
@@ -61,4 +61,4 @@ try{
   server.close();
 }
 if(errors.length){console.error(errors.join('\n'));process.exitCode=1;}
-else console.log('PASS: seven concepts × desktop/mobile + five interactive behaviors; screenshots saved.');
+else console.log('PASS: seven concepts × five responsive widths + five interactive behaviors; screenshots saved.');
