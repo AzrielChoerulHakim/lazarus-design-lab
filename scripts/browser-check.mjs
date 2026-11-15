@@ -77,6 +77,7 @@ try{
     if(!(await page.locator('#desk-record').textContent()).includes('TRAINING'))errors.push('Desk state failed');
     if((await page.locator('[data-desk="3"]').getAttribute('aria-pressed'))!=='true')errors.push('Desk control state inaccessible');
     if(!(await page.locator('#desk-filename').textContent()).includes('TRAINING'))errors.push('Desk still uses false file label');
+    await page.locator('[data-concept="1"]').click();
     await page.locator('[data-concept="1"]').focus();
     await page.keyboard.press('ArrowRight');
     if((await page.locator('[data-concept="2"]').getAttribute('aria-pressed'))!=='true')errors.push(width+' keyboard concept navigation failed');
