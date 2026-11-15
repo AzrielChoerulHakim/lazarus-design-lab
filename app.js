@@ -21,6 +21,15 @@
     if (el) el.textContent = value;
   }
 
+  // Internal choice controls must expose their current state to assistive tech.
+  function activateChoice(selector, selected) {
+    mount.querySelectorAll(selector).forEach(button => {
+      const active = button === selected;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+  }
+
   function setupRecord() {
     const values = [
       ['01 — VERIFIED EDUCATION', 'UIN Syarif Hidayatullah Jakarta · Bachelor of Law · GPA 3.79/4.00'],
@@ -29,7 +38,7 @@
     ];
     mount.querySelectorAll('[data-rec]').forEach(button => button.addEventListener('click', () => {
       const i = Number(button.dataset.rec);
-      mount.querySelectorAll('[data-rec]').forEach(b => b.classList.toggle('active', b === button));
+      activateChoice('[data-rec]', button);
       text('record-k', values[i][0]);
       text('record-v', values[i][1]);
     }));
@@ -44,7 +53,7 @@
     ];
     mount.querySelectorAll('[data-method]').forEach(button => button.addEventListener('click', () => {
       const i = Number(button.dataset.method);
-      mount.querySelectorAll('[data-method]').forEach(b => b.classList.toggle('active', b === button));
+      activateChoice('[data-method]', button);
       ['method-number', 'method-title', 'method-text', 'method-place'].forEach((id,k) => text(id, values[i][k]));
     }));
   }
@@ -58,7 +67,7 @@
     ];
     mount.querySelectorAll('[data-seq]').forEach(button => button.addEventListener('click', () => {
       const i = Number(button.dataset.seq);
-      mount.querySelectorAll('[data-seq]').forEach(b => b.classList.toggle('active', b === button));
+      activateChoice('[data-seq]', button);
       ['seq-date', 'seq-role', 'seq-copy'].forEach((id,k) => text(id, values[i][k]));
       mount.querySelectorAll('.sequence-tracks span').forEach((line,k) => {
         line.style.opacity = String(k <= i ? 1 : .3);
@@ -89,7 +98,7 @@
     ];
     mount.querySelectorAll('[data-desk]').forEach(button => button.addEventListener('click', () => {
       const i = Number(button.dataset.desk);
-      mount.querySelectorAll('[data-desk]').forEach(b => b.classList.toggle('active', b === button));
+      activateChoice('[data-desk]', button);
       ['desk-filename', 'desk-title', 'desk-copy', 'desk-record', 'desk-date'].forEach((id,k) => text(id, values[i][k]));
     }));
   }
@@ -100,6 +109,9 @@
     current = id;
     const template = document.getElementById('concept-' + id);
     mount.replaceChildren(template.content.cloneNode(true));
+    mount.querySelectorAll('[data-rec], [data-method], [data-seq], [data-desk]').forEach(button => {
+      button.setAttribute('aria-pressed', String(button.classList.contains('active')));
+    });
     const direction = directions[id - 1];
     text('active-heading', String(id).padStart(2,'0') + ' / ' + direction.name);
     text('active-total', String(id).padStart(2,'0') + ' — 07');
