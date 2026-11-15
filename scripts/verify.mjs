@@ -36,7 +36,7 @@ else {
   if (img.readUInt32LE(4) + 8 !== img.length) errors.push('WebP RIFF size mismatch: possible corrupted transfer');
 }
 const graduationSvg = read('assets/aurel-graduation.svg');
-const graduation = graduationSvg.match(/data:image\\/webp;base64,([A-Za-z0-9+/=]+)/);
+const graduation = graduationSvg.match(new RegExp('data:image/webp;base64,([A-Za-z0-9+/=]+)'));
 if (!graduation) errors.push('Graduation photo missing');
 else {
   const img = Buffer.from(graduation[1], 'base64');
