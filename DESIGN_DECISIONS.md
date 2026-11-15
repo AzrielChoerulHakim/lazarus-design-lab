@@ -12,7 +12,7 @@
 - Cashier, PT Ramayana Lestari Sentosa Tbk, Ciplaz Depok branch (March–April 2025): POS handling of cash/debit/credit transactions, daily sales recording, customer service.
 - Certifications/training listed: HR Intensive Bootcamp, Harisenin.com (June 2026); MySkill Short Class: Data Formatting & Cleansing (November 2024); Criminal Court Simulation Training at UIN Jakarta (August–September 2024).
 - EPT/TOEFL Institutional score 443 (2025) listed under languages; skills named include legal administration, legal contract drafting, Microsoft Office, sales and inventory administration.
-- Four uploaded photos (two portrait/casual and two graduation). Only a compressed portrait derivative is included in the public demo.
+- Four uploaded photos (two portrait/casual and two graduation). Two compressed portrait/graduation derivatives are included in the public demo.
 
 ### Unknown / intentionally NOT asserted
 Individual legal case outcomes, independent legal counsel experience, external client projects, litigation success rate, years of full-time legal practice, quantitative retail performance, verified language proficiency beyond the listed EPT score, portfolio ownership/subject consent, preferred role, intended hiring audience, photo copyright/consent.
@@ -43,7 +43,7 @@ For a law-office/administrative recruitment context, **01 The Record** is the st
 No final client-facing design should be chosen without verifying the preferred role, audience and consent. The preview intentionally includes all seven directions for comparative testing.
 
 ## Source/asset rights and publication
-The public repo does not contain the raw CV, contact phone, full-resolution photos, original photo ZIP, or claims of permission from the photographed person. The demo uses one compact photographic derivative from the uploaded archive. Professional email is present as a contact action because it was listed on the provided CV; the subject should confirm preferred public contact before publishing an official site.
+The public repo does not contain the raw CV, contact phone, full-resolution photos, original photo ZIP, or claims of permission from the photographed person. The demo uses two compact photographic derivatives from the uploaded archive. Professional email is present as a contact action because it was listed on the provided CV; the subject should confirm preferred public contact before publishing an official site.
 
 ## Preliminary anti-generic challenge
 - **Identity swap:** unlike generic "creative professional" pages, the concepts foreground the precise court internship, named operations roles and degree. A visual-only screenshot could still be repurposed for other users, so this is only partly addressed.
