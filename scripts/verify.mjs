@@ -5,7 +5,7 @@ import vm from 'node:vm';
 const root = path.resolve(import.meta.dirname, '..');
 const errors = [];
 const read = rel => fs.readFileSync(path.join(root, rel), 'utf8');
-const required = ['README.md','DESIGN_DECISIONS.md','index.html','styles.css','app.js','assets/aurel-portrait.svg','assets/aurel-graduation.svg'];
+const required = ['README.md','DESIGN_DECISIONS.md','index.html','styles.css','craft.css','app.js','assets/aurel-portrait.svg','assets/aurel-graduation.svg'];
 for (const file of required) {
   if (!fs.existsSync(path.join(root, file))) errors.push('Missing file: ' + file);
 }
@@ -22,7 +22,7 @@ if (concepts.join(',') !== '1,2,3,4,5,6,7') errors.push('Expected seven visible 
 for (const id of [1,2,3,4,5,6,7]) {
   if (!css.includes('.c' + id + '{')) errors.push('Missing concept CSS: ' + id);
 }
-if (!html.includes('src="./app.js"') || !html.includes('href="./styles.css"')) errors.push('HTML asset references missing');
+if (!html.includes('src="./app.js"') || !html.includes('href="./styles.css"') || !html.includes('href="./craft.css"')) errors.push('HTML asset references missing');
 if (!css.includes("aurel-portrait.svg")) errors.push('CSS portrait path missing');
 if (!css.includes('aurel-graduation.svg')) errors.push('Graduation photo asset is not linked');
 if (!css.includes('prefers-reduced-motion')) errors.push('No reduced-motion rule');
