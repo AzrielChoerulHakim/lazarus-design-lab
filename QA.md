@@ -1,7 +1,7 @@
 # Quality Assurance — Field Experiment 001
 
 ## Status
-**Static/source-level review performed; browser screenshot/e2e checks are configured in CI but their run status has not been independently confirmed in this authoring session.** Do not interpret this document as a claim that visual QA passed. A GitHub Actions job is included to capture 14 screenshots (390px and 1440px × 7 concepts) and verify representative interactions; its artifacts must be inspected by a human reviewer.
+**Static/source-level review performed; browser screenshot/e2e checks are configured in CI but their run status has not been independently confirmed in this authoring session.** Do not interpret this document as a claim that visual QA passed. A GitHub Actions job is included to capture 35 screenshots (320px, 390px, 768px, 1024px and 1440px × 7 concepts) and verify representative interactions; its artifacts must be inspected by a human reviewer.
 
 ## Verified during creation
 - Retrieved source document was the one-page PDF titled “CV HANINDHIYA DAFFA AURELYA.pdf”.
@@ -21,9 +21,7 @@
 | Concept selection implementation | PASS — source inspection only | `app.js`; NOT YET E2E-VERIFIED |
 | JS parsing | PASS — syntax inspection | `app.js` |
 | Embedded original-image derivatives | PASS — binary structure; browser rendering unverified | `assets/*.svg` |
-| 390px responsive rendering | NOT YET VERIFIED | CI Playwright screenshots pending |
-| 1440px responsive rendering | NOT YET VERIFIED | CI Playwright screenshots pending |
-| 320px, 768px, 1024px sizes | NOT YET VERIFIED | Manual review required |
+| 320px, 390px, 768px, 1024px and 1440px rendering | NOT YET VERIFIED | CI Playwright screenshots pending; manual review required |
 | Touch and keyboard navigation | NOT YET VERIFIED | CI covers button clicks; full keyboard audit pending |
 | Zoom to 200% | NOT YET VERIFIED | Manual review required |
 | Reduced motion | PARTIAL — stylesheet present; behavior not yet inspected | `styles.css` |
@@ -34,7 +32,7 @@
 ## CI workflow
 On push to `main`, `.github/workflows/verify.yml` runs:
 1. Node JS syntax + seven-template/source/photo/privacy structural check
-2. Playwright Chromium desktop and mobile prototype checks
+2. Playwright Chromium checks across five responsive widths
 3. Upload `design-lab-visual-review` screenshot artifact
 
 A second workflow (`.github/workflows/pages.yml`) attempts to deploy the static HTML/CSS/JS through GitHub Pages. GitHub repository settings and Actions permissions must allow Pages deployment. The expected URL is:
