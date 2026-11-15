@@ -44,7 +44,7 @@ npm run verify
 npx playwright install chromium
 npm run test:e2e
 ```
-The browser script captures 35 concept/viewport screenshots and checks interactive state. Visual artifacts must be reviewed manually; see [QA.md](QA.md).
+The browser script captures 42 concept/viewport screenshots and checks interactive state. Visual artifacts must be reviewed manually; see [QA.md](QA.md).
 
 ## Stack
 Static HTML, CSS, and vanilla JavaScript. No framework or build step. Accessible buttons and semantic information, reduced-motion behavior and responsive layout.
