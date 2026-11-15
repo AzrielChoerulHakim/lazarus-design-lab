@@ -24,9 +24,10 @@ const errors=[];
 const geometry=[];
 const browser=await chromium.launch({headless:true});
 try{
-  for(const width of [320,390,768,1024,1440]){
+  for(const width of [320,390,640,768,1024,1440]){
     const page=await browser.newPage({viewport:{width,height:900},deviceScaleFactor:1});
     page.on('pageerror',e=>errors.push(width+' JS runtime error: '+e.message));
+    page.on('response',r=>{ if(r.url().startsWith('http://127.0.0.1:') && r.status() >= 400) errors.push(width+' missing local asset: '+r.url()); });
     await page.goto('http://127.0.0.1:'+port+'/',{waitUntil:'load'});
     for(let i=1;i<=7;i++){
       await page.locator('[data-concept="'+i+'"]').click();
@@ -35,6 +36,8 @@ try{
       const title=await page.locator('#active-heading').textContent();
       const count=await page.locator('#mount > article').count();
       if(active!=='true'||!title.startsWith(String(i).padStart(2,'0'))||count!==1)errors.push(width+' concept '+i+' selection failed');
+      const tap=await page.locator('[data-concept="'+i+'"]').evaluate(el=>el.getBoundingClientRect().height);
+      if(tap<44)errors.push(width+' concept '+i+' navigation target under 44px');
       const overflow=await page.evaluate(()=>document.documentElement.scrollWidth > innerWidth+4);
       if(overflow)errors.push(width+' concept '+i+' document overflow');
       // Collect geometry to expose hidden text/clipped headline risks beyond document scrollWidth.
@@ -66,10 +69,18 @@ try{
     await page.locator('[data-concept="4"]').click();
     await page.locator('[data-index="0"]').click();
     if((await page.locator('[data-index="0"]').getAttribute('aria-expanded'))!=='true')errors.push('Index expansion failed');
+    if(!(await page.locator('#index-detail-0').isVisible()))errors.push('Index details missing after expansion');
+    if((await page.locator('[data-index="0"]').getAttribute('aria-controls'))!=='index-detail-0')errors.push('Index control aria-controls missing');
+    if((await page.locator('[data-index="4"]').count())!==1)errors.push('ITC and education records were not both preserved');
     await page.locator('[data-concept="6"]').click();
     await page.locator('[data-desk="3"]').click();
     if(!(await page.locator('#desk-record').textContent()).includes('TRAINING'))errors.push('Desk state failed');
     if((await page.locator('[data-desk="3"]').getAttribute('aria-pressed'))!=='true')errors.push('Desk control state inaccessible');
+    if(!(await page.locator('#desk-filename').textContent()).includes('TRAINING'))errors.push('Desk still uses false file label');
+    await page.locator('[data-concept="1"]').focus();
+    await page.keyboard.press('ArrowRight');
+    if((await page.locator('[data-concept="2"]').getAttribute('aria-pressed'))!=='true')errors.push(width+' keyboard concept navigation failed');
+    if(!(await page.locator('[data-concept="2"]').evaluate(el=>el===document.activeElement)))errors.push(width+' keyboard focus failed to follow selection');
     await page.close();
   }
   for (const asset of ['assets/aurel-portrait.svg','assets/aurel-graduation.svg']) {
@@ -87,4 +98,4 @@ fs.writeFileSync(path.join(shots,'geometry-report.json'),JSON.stringify(geometry
 const suspicious=geometry.filter(x=>x.overflowCandidates.length);
 console.log('Geometry review: '+suspicious.length+' of '+geometry.length+' artboard/viewport combinations have elements potentially outside the artboard. Inspect the JSON and screenshots; this is not automatically a visual failure.');
 if(errors.length){console.error(errors.join('\n'));process.exitCode=1;}
-else console.log('PASS: seven concepts × five responsive widths + five interactive behaviors; screenshots saved.');
+else console.log('PASS: seven concepts × six responsive widths, content integrity, keyboard state and interactive behaviors; screenshots saved.');
