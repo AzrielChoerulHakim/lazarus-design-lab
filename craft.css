@@ -177,6 +177,21 @@ button:not(:disabled){touch-action:manipulation}
 .c7 .portrait-bottom a{background:#28553f;color:#fff;border-radius:7px;min-height:45px;display:flex;align-items:center;font:620 12px var(--sans)}
 .c7 .portrait-bottom a:hover{background:#183f2d}
 
+/* Text-size audit: secondary labels must remain readable on small screens. */
+.concept :is(
+ .record-tab-no,.record-sub,.record-fig,
+ .method-head,.method-side,.method-info>span,
+ .sequence-head,.sequence-hero>span,.sequence-reader>span,
+ .index-labels,.index-entry span,.index-foot,
+ .letter-head,.letter-under,.letter-side>span,
+ .desk-head,.desk-folder-title,.desk-paper-head,.desk-paper-foot,
+ .portrait-head,.portrait-overline,.portrait-bottom span
+){font-size:11px;line-height:1.48;overflow-wrap:anywhere}
+.concept button{font-size:12px}
+.c1 .record-tabs button{font-size:11px}
+.c6 .desk-folder button{font-size:12px}
+.c4 .index-labels{color:#586655}
+
 /* The controls must remain readable at actual mobile widths; visual polish is not a substitute. */
 @media(max-width:1050px){
  .intro-main h1{font-size:clamp(48px,6.4vw,72px)}
