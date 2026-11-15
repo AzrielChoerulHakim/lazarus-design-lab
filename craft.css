@@ -300,3 +300,65 @@ button:not(:disabled){touch-action:manipulation}
 }
 
 .no-script{margin:0;padding:24px;font:500 15px/1.6 var(--sans);color:#374f43}
+
+
+/* SECOND PASS / anti-formula visual grammar. The seven artboards are alternatives,
+   not one identical layout wearing different accent colors. These decisions
+   retain content-led structures and improve reading/feedback, not Apple imitation. */
+
+/* 04: a legible public register with a recognizable high-contrast information
+   surface; unlike the literary dossier and letter, typography behaves as data. */
+.c4{background:#f1da6a;color:#1c241c}
+.c4 .index-head{border-bottom-color:#566048}
+.c4 .index-star{color:#ad3f2b}
+.c4 .index-header h2 span{color:#ac452f}
+.c4 .index-header p{color:#343e2d}
+.c4 .index-labels{color:#39452f}
+.c4 .index-entry{border-bottom-color:#7d8259;color:#1a251b}
+.c4 .index-entry:focus-visible{outline-offset:-4px}
+.c4 .index-entry:hover,.c4 .index-entry[aria-expanded=true]{background:#233d32;color:#fff8e0}
+.c4 .index-expansion{background:#fbf1bd;color:#27342a;border-left:4px solid #b04a30}
+.c4 .index-foot{color:#37422c}
+
+/* 05: deliberately unadorned reading, not the same pale-green console layout.
+   Its single task is a calm introduction; Georgia is a reading choice. */
+.c5{background:#fffdfa;color:#332823}
+.c5 .letter-head,.c5 .letter-under{border-color:#bcada0}
+.c5 .letter-body>p:not(.letter-salutation){color:#463d36}
+.c5 .letter-side{border-color:#b6aba2}
+.c5 .letter-body a:focus-visible{outline-offset:2px}
+
+/* 06: information tool rather than an atmospheric portfolio hero.
+   A neutral blue-gray document workspace differentiates its mental model. */
+.c6{background:#e2e9ed;color:#20374a}
+.c6 .desk-head{background:#cbd8df;color:#29475b;border-bottom-color:#a3b9c4}
+.c6 .desk-head>span:first-child{color:#24445a}
+.c6 .desk-head>span:last-child{color:#466172}
+.c6 .desk-folder{background:#e2ebf0;border-right-color:#b0c4cd}
+.c6 .desk-folder-title{color:#486675;border-color:#b9cbd5}
+.c6 .desk-hierarchy,.c6 .desk-bottom{color:#537283}
+.c6 .desk-folder button{color:#264b60}
+.c6 .desk-folder button:hover,.c6 .desk-folder button.active{background:#244b64;color:#fff}
+.c6 .desk-paper{background:#fff;color:#243e4e}
+.c6 .desk-paper-head,.c6 .desk-paper-foot{color:#526d7a;border-color:#cbd8df}
+.c6 .desk-document>span{color:#516d7d}
+.c6 .desk-document h2{color:#193f55}
+.c6 .desk-document p{color:#476374}
+.c6 .desk-properties{border-color:#afc4ce}
+.c6 .desk-properties>div:first-child,.c6 .desk-properties dt{color:#496b7e;border-color:#afc4ce}
+.c6 .desk-properties dd{color:#24485d}
+.c6 .desk-stamp{border-color:#9cb5c3;color:#4a6979}
+
+/* Apple craft = perceivable state and target comfort, not decorative motion. */
+.concept :is(button,a):focus-visible{outline:3px solid #106fa2;outline-offset:2px}
+.concept button[aria-pressed=true]:not(.index-entry){text-decoration-thickness:2px}
+@media(max-width:510px){
+ .c2 .method-context span{font-size:11px}
+ .c2 .method-context strong{font-size:13px}
+ .c4 .index-labels{font-size:11px}
+ .c4 .index-entry strong{font-size:15px;line-height:1.25}
+ .c4 .index-entry span{font-size:11px}
+ .c5 .letter-body>p:not(.letter-salutation){font-size:15px}
+ .c6 .desk-paper-head{font-size:11px}
+ .c6 .desk-document p{font-size:15px}
+}
