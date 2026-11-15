@@ -83,7 +83,7 @@ button:not(:disabled){touch-action:manipulation}
 .c2 .method-context{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:19px 0;border-bottom:1px solid #afc3b7}
 .c2 .method-context:first-child{border-top:1px solid #afc3b7}
 .c2 .method-context::before{content:"";width:7px;height:7px;background:#3f7b65;border-radius:50%;position:absolute;left:-38px}
-.c2 .method-context span{font:600 10px/1.45 var(--sans);letter-spacing:.02em;color:#557965}
+.c2 .method-context span{font:600 10px/1.45 var(--sans);letter-spacing:.02em;color:#557965;transform:none;height:auto;min-width:0;background:none;border:0;padding:0;position:static}
 .c2 .method-context strong{font:620 clamp(16px,1.6vw,21px)/1.25 var(--sans);letter-spacing:-.03em;text-align:right;max-width:155px}
 .c2 .method-list button{min-height:68px}
 .c2 .method-list button.active,.c2 .method-list button:hover{background:#2b6955;color:white}
