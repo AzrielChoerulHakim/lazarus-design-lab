@@ -45,7 +45,7 @@ button:not(:disabled){touch-action:manipulation}
 .control-buttons button:active{transform:scale(.95)}
 .control-buttons span{font-size:12px;color:#425d50}
 .concept-nav{gap:6px;border:0;margin-top:24px;margin-bottom:15px}
-.concept-nav button{border:1px solid #d4dfd7;border-radius:10px;min-height:72px;background:#fff;padding:13px 12px;gap:6px;transition:background-color .17s ease,color .17s ease,border-color .17s ease}
+.concept-nav button{border:1px solid #d4dfd7;border-radius:10px;min-height:72px;background:#fff;padding:13px 12px;gap:6px;transition:none}
 .concept-nav button:hover{background:#f3f7f3;border-color:#a6bcae}
 .concept-nav button[aria-pressed=true]{background:#1b3d31;border-color:#1b3d31;color:#f5f9f4}
 .concept-nav button span{font:650 11px/1 var(--sans);color:#748679}
