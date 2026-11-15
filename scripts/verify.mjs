@@ -5,7 +5,7 @@ import vm from 'node:vm';
 const root = path.resolve(import.meta.dirname, '..');
 const errors = [];
 const read = rel => fs.readFileSync(path.join(root, rel), 'utf8');
-const required = ['README.md','DESIGN_DECISIONS.md','index.html','styles.css','app.js','assets/aurel-portrait.svg'];
+const required = ['README.md','DESIGN_DECISIONS.md','index.html','styles.css','app.js','assets/aurel-portrait.svg','assets/aurel-graduation.svg'];
 for (const file of required) {
   if (!fs.existsSync(path.join(root, file))) errors.push('Missing file: ' + file);
 }
@@ -24,6 +24,7 @@ for (const id of [1,2,3,4,5,6,7]) {
 }
 if (!html.includes('src="./app.js"') || !html.includes('href="./styles.css"')) errors.push('HTML asset references missing');
 if (!css.includes("aurel-portrait.svg")) errors.push('CSS portrait path missing');
+if (!css.includes('aurel-graduation.svg')) errors.push('Graduation photo asset is not linked');
 if (!css.includes('prefers-reduced-motion')) errors.push('No reduced-motion rule');
 try { new vm.Script(js); } catch (error) { errors.push('App syntax error: ' + error.message); }
 if (html.includes('081380191361') || html.includes('6281380191361')) errors.push('Personal phone must not be published');
@@ -33,6 +34,13 @@ else {
   const img = Buffer.from(match[1], 'base64');
   if (img.toString('ascii',0,4) !== 'RIFF' || img.toString('ascii',8,12) !== 'WEBP') errors.push('Photo is not valid WebP RIFF data');
   if (img.readUInt32LE(4) + 8 !== img.length) errors.push('WebP RIFF size mismatch: possible corrupted transfer');
+}
+const graduationSvg = read('assets/aurel-graduation.svg');
+const graduation = graduationSvg.match(/data:image\\/webp;base64,([A-Za-z0-9+/=]+)/);
+if (!graduation) errors.push('Graduation photo missing');
+else {
+  const img = Buffer.from(graduation[1], 'base64');
+  if (img.toString('ascii',0,4) !== 'RIFF' || img.toString('ascii',8,12) !== 'WEBP' || img.readUInt32LE(4) + 8 !== img.length) errors.push('Graduation WebP invalid');
 }
 if (errors.length) {
   console.error('Design Lab verification FAILED:\n' + errors.map(e => '- ' + e).join('\n'));
