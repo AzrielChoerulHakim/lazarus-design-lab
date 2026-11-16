@@ -33,3 +33,83 @@ h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--display);font-weight:600;line
   .skill-tabs { min-width:0;overflow-x:auto;scrollbar-width:thin; }
   .skill-tabs button {flex:0 0 auto;}
 }
+
+/* REFINEMENT — LAZARUS VOICE / MOBILE VISUAL INTEGRITY
+   Only small screens: deliberate re-composition rather than shrinking the desktop. */
+.skill-tab-short{display:none}
+@media (max-width: 600px){
+  /* Chapter markers become a readable two-line margin note, never a collision with decoration. */
+  .section-head{display:flex;flex-direction:column;align-items:flex-start;gap:5px;margin-bottom:35px}
+  .section-head .head-line{display:none}
+  .section-head .section-index{font-size:9px;letter-spacing:.105em;line-height:1.45}
+  .section-head .hand-tag{font-size:18px;line-height:1.15;transform:rotate(-3deg);white-space:normal}
+
+  /* Keep all copy in a clean reading column; decoration stays within the illustrated panel. */
+  .hero-copy{isolation:isolate}
+  .hero-cloud{display:none}
+  .hero .sky-doodle{top:auto;bottom:10%;right:0;width:32%;opacity:.35}
+  .hero h1 em{white-space:normal}
+  .hero-micro{gap:12px;flex-wrap:wrap;line-height:1.5;font-size:9px}
+  .hero-art{width:min(100%,460px);margin-top:26px;height:clamp(390px,112vw,525px)}
+  .hero-art .photo-ribbon{top:0;right:4%;max-width:56%;text-align:right;font-size:17px;line-height:1.1}
+  .hero-art .portrait-frame{right:17%;top:37px;width:66%;height:74%}
+  /* Seal is a free-standing badge below the photo, not an overlay on the portrait. */
+  .hero-art .photo-stamp{right:0;bottom:4%;width:84px;height:84px;transform:rotate(8deg);box-shadow:0 0 0 3px #eac9a0,0 0 0 4px rgba(130,75,76,.35)}
+  .hero-art .photo-stamp>span{font-size:14px}
+  .hero-art .photo-stamp strong{font-size:16px}
+  .hero-art .photo-stamp svg{width:33px;margin:2px 0}
+  .hero-art .photo-stamp small{font-size:6px}
+  .hero-art .tiny-sign{display:none}
+  .hero-bottomline{margin-top:0;line-height:1.5}
+
+  /* Polaroid and its handwritten caption must not intrude into the prose. */
+  .about-polaroid{padding-bottom:48px}
+  .about-polaroid .side-caption{transform:none;position:static;display:block;align-self:end;margin:18px 0 0 8px;writing-mode:vertical-rl;max-height:200px}
+  .about-copy{padding-top:8px}
+  .about-signature{flex-wrap:wrap;row-gap:4px}
+
+  /* Keep journey circles in their own column; remove offscreen path and arrow intrusion. */
+  .trail-entry{grid-template-columns:39px minmax(0,1fr);gap:12px}
+  .trail-number{margin:10px 0 0;width:39px;height:39px;font-size:16px;box-shadow:2px 3px 0 #314a3e}
+  .trail-number span{font-size:12px;right:-2px;top:-9px}
+  .trail-line{display:none}
+  .trail-card:after{display:none}
+  .trail-card{min-width:0;padding:21px 17px 19px}
+  .trail-card h3{overflow-wrap:anywhere;line-height:1.08}
+  .entry-top{font-size:9px;letter-spacing:.035em;line-height:1.5}
+  .entry-key{font-size:9px;letter-spacing:.04em;overflow-wrap:anywhere}
+
+  /* Tabs on mobile are genuine three equal columns, with their own short reading labels. */
+  .skills-journal{padding:0 15px;min-width:0}
+  .skill-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;min-width:0}
+  .skill-tabs button{min-width:0;max-width:100%;padding:12px 3px 13px;font:16px/1.2 var(--hand);white-space:normal;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;overflow-wrap:normal}
+  .skill-tab-number{font:700 10px/1.1 var(--body);letter-spacing:.09em;opacity:.75}
+  .skill-tab-full{display:none}
+  .skill-tab-short{display:block}
+  .skill-tabs button[aria-selected=true]:after{left:8px;right:8px}
+  .skill-panel{min-height:0;padding:25px 0 29px}
+  .skill-panel p{min-height:0;font-size:14px;line-height:1.78}
+  .skill-chips span{overflow-wrap:anywhere;max-width:100%}
+  .journal-bottom{line-height:1.5;gap:12px}
+
+  /* Illustration belongs after the contact action; long titles must keep breathing room. */
+  .closing h2{overflow-wrap:normal;font-size:clamp(43px,10.2vw,66px);line-height:1.06}
+  .closing-inner{padding-bottom:230px}
+  .envelope{bottom:27px;right:8%;width:135px}
+  .site-footer{align-items:flex-end;line-height:1.4}
+}
+@media (max-width: 350px){
+  .hero-micro{gap:8px;font-size:8px}
+  .hero-art{height:395px}
+  .hero-art .photo-ribbon{font-size:15px}
+  .hero-art .photo-stamp{width:73px;height:73px;bottom:4%}
+  .hero-art .photo-stamp>span{font-size:12px}
+  .hero-art .photo-stamp strong{font-size:14px}
+  .about-polaroid .side-caption{display:none}
+  .trail-entry{grid-template-columns:32px minmax(0,1fr);gap:10px}
+  .trail-number{width:32px;height:32px;font-size:14px}
+  .trail-card{padding:19px 13px 18px}
+  .skill-tabs button{font-size:14px}
+  .journal-top{gap:8px;line-height:1.4}
+  .closing h2{font-size:clamp(39px,10.3vw,51px)}
+}
